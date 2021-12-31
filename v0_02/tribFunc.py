@@ -36,3 +36,23 @@ def kin_visc(vKin_visc,vAbs_visc,vDensity):
     spEqn = sp.Ep(kin_visc,abs_visc/density)
 
     return spC.spSolver(variables,values,spEqn,missingVar)
+
+#3.3 ASTM D341 Viscosity-Temperature
+def ASTM_D341(vkin_visc,vA,vB,vtemp):
+    variables = ["kin_visc","A","B","temp"]
+    values = [vkin_visc,vA,vB,vtemp]
+    missingVar = spC.spNull(variables,values)
+
+    #Check for negative inputs
+    if vkin_visc-0.7 <= 0 or vtemp <= 0:
+        print("Error: Values are negative")
+
+    kin_visc,a,b,temp \
+        =sp.symbols("kin_visc A B temp")
+    spEqn = sp.Ep(sp.log(sp.log(kin_visc+0.7,10),10),
+        a-b*sp.log(temp,10))
+
+    return spC.spSolver(variables,values,spEqn,missingVar)
+
+
+
