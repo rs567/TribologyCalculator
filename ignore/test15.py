@@ -5,11 +5,18 @@ import sympy as sp
 #values = array
 #equation = sympy object
 
-def varSolver(variables,values,equation):
-
-    #Looping through variables array and converting variables to sympy objects 
+def spVar(variables):
     for var in variables:
         var = sp.symbols(var)
+        print(var)
+
+def spSolver1():
+    pass
+    
+
+def spSolver(variables,values,equation):
+    #Looping through variables array and converting variables to sympy objects 
+    spVar(variables)
 
     #Generate sympy Equation
     eqn = sp.Eq(equation)
@@ -44,4 +51,4 @@ if __name__ == "__main__":
     x = ["test1","test2","test3"]
     values = ["null",2,2]
     equation = "test1,test2/test3"
-    varSolver(x,values,equation)
+    spSolver(x,values,equation)

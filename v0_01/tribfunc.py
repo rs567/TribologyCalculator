@@ -42,3 +42,15 @@ def kin_visc(kin_visc,abs_visc,density):
 #     else:
 #         print("Fatal Error: Check Inputs")
 
+#varibles = array
+#values = array
+#equation = sympy object
+
+def varSolver(variables,values,equation):
+
+    #Looping through variables array and converting variables to sympy objects 
+    for var in variables:
+        var = sp.symbols(var)
+    
+    
+
