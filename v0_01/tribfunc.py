@@ -5,7 +5,7 @@ import sympyMod as spM
 def fric_coeff(vFric_coeff,vForce,vWeight):
     fric_coeff,force,weight=sp.symbols('fric_coeff force weight')
     eqn = sp.Eq(fric_coeff,force/weight)
-    return var3(vFric_coeff,vForce,vWeight,eqn)
+    #return var3(vFric_coeff,vForce,vWeight,eqn)
     
 #3.1 Absolute Viscosity
 def abs_visc(abs_visc,shear_stress,shear_strain):

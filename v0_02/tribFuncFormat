@@ -1,0 +1,19 @@
+## FORMAT
+# def
+    # variables = array
+    # values = array
+    # missingVar = spC.spNull(variables,values)
+    # 
+    # symbols =
+    # spEqn = the equation 
+
+
+def ():
+    variables = []
+    values =
+    missingVar = spC.spNull(variables,values)
+
+    =sp.symbols('')
+    spEqn = sp.Ep()
+
+    spC.spSolver(variables,values,spEqn,missingVar)
